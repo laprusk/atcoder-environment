@@ -4,14 +4,14 @@
 	"remoteUser": "atcoder",
 	"mounts": [
 		"source=oj-cookie,target=/home/atcoder/.local/share/online-judge-tools",
-		"source=acc-setting,target=/home/atcoder/.config/atcoder-cli"
+		"source=acc-setting,target=/home/atcoder/.config/atcoder-cli-nodejs"
 	],
+	"postCreateCommand": "sudo /bin/sh .devcontainer/post-create.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-vscode.cpptools"
 			]
 		}
-	},
-	"postCreateCommand": "sudo /bin/sh .devcontainer/post-create.sh"
+	}
 }
