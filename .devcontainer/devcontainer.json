@@ -2,6 +2,10 @@
 	"name": "AtCoder",
 	"dockerFile": "Dockerfile",
 	"remoteUser": "atcoder",
+	"mounts": [
+		"source=oj-cookie,target=/home/atcoder/.local/share/online-judge-tools",
+		"source=acc-setting,target=/home/atcoder/.config/atcoder-cli"
+	],
 	"customizations": {
 		"vscode": {
 			"extensions": [
