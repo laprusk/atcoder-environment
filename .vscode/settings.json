@@ -1,3 +1,4 @@
 {
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "disabled": ["github.copilot", "github.copilot-chat"]
 }
