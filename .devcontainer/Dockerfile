@@ -5,6 +5,7 @@ RUN apt-get update && \
     gcc-12 \
     g++-12 \
     gdb \
+    sudo \
     make \
     git \
     python3 \
@@ -16,8 +17,9 @@ RUN pip3 install --break-system-packages online-judge-tools==11.5.1 && \
 
 ENV CPLUS_INCLUDE_PATH=/lib/ac-library
 
-RUN groupmod -n atcoder node && \
-    usermod -l atcoder -m -d /home/atcoder node
+RUN groupmod -n atcoder node
+RUN usermod -l atcoder -m -d /home/atcoder node
+RUN echo "atcoder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER atcoder
 WORKDIR /home/atcoder
