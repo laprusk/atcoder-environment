@@ -1,0 +1,6 @@
+{
+    "task": {
+        "program": [["/workspaces/atcoder/.devcontainer/main.cpp", "main.cpp"]],
+        "submit": "main.cpp"
+    }
+}

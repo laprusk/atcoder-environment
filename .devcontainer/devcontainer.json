@@ -1,0 +1,13 @@
+{
+	"name": "AtCoder",
+	"dockerFile": "Dockerfile",
+	"remoteUser": "atcoder",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools"
+			]
+		}
+	},
+	"postCreateCommand": "/bin/sh .devcontainer/post-create.sh"
+}

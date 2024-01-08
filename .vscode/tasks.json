@@ -1,0 +1,71 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C++ Build",
+			"command": "/usr/bin/g++-12",
+			"args": [
+				"-std=gnu++20",
+				"-g",
+				"-Wall",
+				"-Wextra",
+				"-fsanitize=undefined,address",
+				"-o",
+				"${fileDirname}/a.out",
+				"${file}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"group": "build",
+			"detail": "コンパイラ: /usr/bin/g++-12"
+		},
+		{
+			"type": "shell",
+			"label": "Test Sample Cases",
+			"command": "oj t -d ${fileDirname}/tests",
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"dependsOn": [
+				"C++ Build"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Submit to AtCoder",
+			"command": "acc submit ${file}",
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		}
+	]
+}
