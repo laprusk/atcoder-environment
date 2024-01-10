@@ -26,7 +26,7 @@ struct Init {
 } init;
 
 int main() {
-
+    
 
     return 0;
 }
