@@ -8,10 +8,16 @@
 		],
 		"description": "Log output to console"
 	},
+	"Input": {
+		"prefix": "ci",
+		"body": [
+			"cin >> ${1:n};"
+		]
+	},
 	"Output": {
 		"prefix": "co",
 		"body": [
-			"cout << $1 << '\\n';"
+			"cout << ${1:ans} << '\\n';"
 		]
 	},
 	"YesOrNo": {
