@@ -3,8 +3,8 @@
 	"dockerFile": "Dockerfile",
 	"remoteUser": "atcoder",
 	"mounts": [
-		"source=oj-cookie,target=/home/atcoder/.local/share/online-judge-tools",
-		"source=acc-setting,target=/home/atcoder/.config/atcoder-cli-nodejs"
+		"source=atcoder-oj,target=/home/atcoder/.local/share/online-judge-tools",
+		"source=atcoder-acc,target=/home/atcoder/.config/atcoder-cli-nodejs"
 	],
 	"postCreateCommand": "/bin/sh .devcontainer/post-create.sh",
 	"customizations": {

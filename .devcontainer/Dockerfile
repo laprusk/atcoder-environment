@@ -1,15 +1,16 @@
-FROM node:21.5.0-bookworm-slim
+FROM node:20.10.0-bookworm-slim
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     gcc-12 \
     g++-12 \
     gdb \
-    sudo \
     make \
     git \
     python3 \
-    python3-pip
+    python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --break-system-packages online-judge-tools==11.5.1 && \
     npm install -g atcoder-cli@2.2.0 && \
@@ -22,4 +23,7 @@ RUN usermod -l atcoder -m -d /home/atcoder node
 RUN echo "atcoder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER atcoder
-WORKDIR /home/atcoder
+
+RUN mkdir -p \
+    /home/atcoder/.local/share/online-judge-tools \
+    /home/atcoder/.config/atcoder-cli-nodejs
