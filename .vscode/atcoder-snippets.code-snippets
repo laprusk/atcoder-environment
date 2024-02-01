@@ -1,0 +1,24 @@
+{
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"Output": {
+		"prefix": "co",
+		"body": [
+			"cout << $1 << '\\n';"
+		]
+	},
+	"YesOrNo": {
+		"prefix": "yn",
+		"body": [
+			"if (yes) cout << \"Yes\" << '\\n';",
+			"else cout << \"No\" << '\\n';"
+		]
+	}
+}
